@@ -18,6 +18,11 @@ public class Weather implements Serializable {
     @JsonProperty("sys")
     private SunTimeline sunTimeline;
 
+    @JsonProperty("name")
+    private String location;
+
+    private long timezone;
+
     public Coordinates getCoordinates() {
         return coordinates;
     }
@@ -48,5 +53,21 @@ public class Weather implements Serializable {
 
     public void setSunTimeline(SunTimeline sunTimeline) {
         this.sunTimeline = sunTimeline;
+    }
+
+    public String getLocation() {
+        return location;
+    }
+
+    public void setLocation(String location) {
+        this.location = location;
+    }
+
+    public long getTimezone() {
+        return timezone;
+    }
+
+    public void setTimezone(long timezone) {
+        this.timezone = timezone;
     }
 }

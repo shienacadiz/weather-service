@@ -4,6 +4,7 @@ import com.etica.weather.model.Coordinates;
 import com.etica.weather.model.TempUnitsEnum;
 import com.etica.weather.model.Weather;
 import com.etica.weather.service.WeatherService;
+import com.etica.weather.util.WeatherResponseMapper;
 import org.apache.commons.lang3.EnumUtils;
 import org.apache.commons.lang3.StringUtils;
 import org.springframework.beans.factory.annotation.Autowired;
@@ -20,6 +21,9 @@ public class WeatherController {
     @Autowired
     private WeatherService weatherService;
 
+    @Autowired
+    private WeatherResponseMapper weatherResponseMapper;
+
     @Value("${openweathermap.apikey}")
     private String apiKey;
 
@@ -32,7 +36,7 @@ public class WeatherController {
                             StringUtils.join(TempUnitsEnum.values(), ", ")));
         }
         Weather weather = weatherService.getWeather(location, TempUnitsEnum.valueOf(units.toLowerCase()).label, apiKey);
-        return ResponseEntity.ok().body(weather);
+        return ResponseEntity.ok().body(weatherResponseMapper.map(weather));
     }
 
     @GetMapping("/geolocation/{location}")

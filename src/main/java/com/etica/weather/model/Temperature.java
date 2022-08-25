@@ -7,7 +7,7 @@ import java.io.Serializable;
 public class Temperature implements Serializable {
     private String temp;
 
-    @JsonProperty("feelsLike")
+    @JsonProperty("feels_like")
     private String feelsLike;
 
     @JsonProperty("temp_min")
