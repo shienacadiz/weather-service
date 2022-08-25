@@ -9,7 +9,7 @@ import org.springframework.web.bind.annotation.RequestParam;
 public interface WeatherClient {
 
     @GetMapping("weather")
-    Weather getWeather(@RequestParam(name = "lat") String latitude,
-                       @RequestParam(name = "lon") String longitude,
+    Weather getWeather(@RequestParam(name = "q") String location,
+                       @RequestParam(name = "units") String units,
                        @RequestParam(name = "appId") String apiKey);
 }
