@@ -1,9 +1,6 @@
 package com.etica.weather.model;
 
-import com.fasterxml.jackson.annotation.JsonFormat;
-
 import java.io.Serializable;
-import java.util.Date;
 
 public class SunTimeline implements Serializable {
     private String country;

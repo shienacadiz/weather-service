@@ -16,6 +16,7 @@ public class WeatherResponseMapper {
         response.setTempMin(weather.getTemperature().getTempMin());
         response.setTempMax(weather.getTemperature().getTempMax());
         response.setTempFeelsLike(weather.getTemperature().getFeelsLike());
+        response.setTempUnit(weather.getUnit());
         response.setHumidity(weather.getTemperature().getHumidity());
         response.setPressure(weather.getTemperature().getPressure());
         response.setDescriptionShort(weather.getWeather().get(0).getMain());

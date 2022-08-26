@@ -23,6 +23,8 @@ public class Weather implements Serializable {
 
     private long timezone;
 
+    private String unit;
+
     public Coordinates getCoordinates() {
         return coordinates;
     }
@@ -69,5 +71,13 @@ public class Weather implements Serializable {
 
     public void setTimezone(long timezone) {
         this.timezone = timezone;
+    }
+
+    public String getUnit() {
+        return unit;
+    }
+
+    public void setUnit(String unit) {
+        this.unit = unit;
     }
 }
