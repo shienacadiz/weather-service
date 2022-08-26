@@ -6,7 +6,6 @@ import com.etica.weather.model.Weather;
 import com.etica.weather.model.WeatherResponse;
 import com.etica.weather.service.WeatherService;
 import com.etica.weather.util.WeatherResponseMapper;
-import feign.Param;
 import io.swagger.v3.oas.annotations.Operation;
 import io.swagger.v3.oas.annotations.Parameter;
 import io.swagger.v3.oas.annotations.enums.ParameterIn;
@@ -24,8 +23,6 @@ import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.PathVariable;
 import org.springframework.web.bind.annotation.RequestParam;
 import org.springframework.web.bind.annotation.RestController;
-
-import java.util.Optional;
 
 @Tag(name = "WeatherController", description = "Manages weather forecast operations")
 @RestController
