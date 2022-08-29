@@ -40,7 +40,7 @@ public class WeatherController {
     @Operation(description = "Gets weather forecast",
         parameters = {  @Parameter(in = ParameterIn.PATH, name = "location", description = "City name and/or state code and/or country code divided by comma. " +
                 "Please note that searching by states available only for the USA locations"),
-                        @Parameter(in = ParameterIn.QUERY, name = "units", description = "Temperature units")},
+                        @Parameter(in = ParameterIn.QUERY, name = "unit", description = "Temperature unit")},
         responses = {   @ApiResponse(responseCode = "200", description = "Successful retrieval of weather forecast details",
             content = @Content(mediaType = "application/json", schema = @Schema(implementation = WeatherResponse.class))),
                         @ApiResponse(responseCode = "400", description = "Bad Request. Invalid values of temperature unit"),
