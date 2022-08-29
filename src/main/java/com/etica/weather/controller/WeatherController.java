@@ -47,13 +47,14 @@ public class WeatherController {
                         @ApiResponse(responseCode = "404", description = "Location NOT found")})
     @GetMapping("/weather/{location}")
     public ResponseEntity getWeather(@PathVariable(name = "location") String location,
-                                     @RequestParam(name = "units", defaultValue = "celsius", required = false) String units) {
-        if(!EnumUtils.isValidEnum(TempUnitsEnum.class, units)) {
+                                     @RequestParam(name = "unit", defaultValue = "celsius", required = false) String unit) {
+        if(!EnumUtils.isValidEnum(TempUnitsEnum.class, unit)) {
             return ResponseEntity.badRequest()
                     .body(String.format("Invalid values of temperature unit. Valid values are [%s]",
                             StringUtils.join(TempUnitsEnum.values(), ", ")));
         }
-        Weather weather = weatherService.getWeather(location, TempUnitsEnum.valueOf(units.toLowerCase()).label, apiKey);
+        Weather weather = weatherService.getWeather(location, TempUnitsEnum.valueOf(unit.toLowerCase()).label, apiKey);
+        weather.setUnit(unit);
 
         if(ObjectUtils.isNotEmpty(weather)) {
             return ResponseEntity.ok().body(weatherResponseMapper.map(weather));

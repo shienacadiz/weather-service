@@ -11,7 +11,7 @@ import org.springframework.stereotype.Service;
 @Service
 public class WeatherService {
     private static final Logger LOGGER = LogManager.getLogger(WeatherService.class);
-    private static final int LIMIT_DEFAULT = 1;
+    public static final int LIMIT_DEFAULT = 1;
 
     @Autowired
     private GeocodingClient geocodingClient;

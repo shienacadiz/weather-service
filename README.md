@@ -26,7 +26,7 @@ Access the live demo here: [https://weather-forecast-sqc-service.herokuapp.com/s
   <tr><td>q</td><td>required</td><td>City name, state code and country code divided by comma. Please note that searching by states available only for the USA locations.<br>
       This field can accept `Brisbane` or `Brisbane, Queensland, AU` and etc<br>We can specify state and country to avoid ambiguity</td></tr>
   <tr><td>appid</td><td>required</td><td>Unique API key configured in application.properties</td></tr>
-  <tr><td>limit</td><td>optional</td><td>Units of measurement. Valid values are [celsius, fahrenheit, kelvin]</td></tr>
+  <tr><td>limit</td><td>optional</td><td>Units of measurement. Valid values are [standard, metric, imperial] for kelvin, celsius, fahrenheit respectively</td></tr>
 </table>
 
 - [FeignClient](https://javadoc.io/doc/org.springframework.cloud/spring-cloud-netflix-core/1.2.1.RELEASE/org/springframework/cloud/netflix/feign/FeignClient.html) has been used to simplify the service to service API invocations. To enable it, dependency below have been imported
